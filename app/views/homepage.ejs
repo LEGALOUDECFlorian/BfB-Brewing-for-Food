@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brewing Food to Beer</title>
+</head>
+
+<body>
+
+
+    <header>
+        <nav>
+            <a href="">BfB</a>
+
+            <ul class="nav-lien-contenair">
+                <li class="nav-lien" id="nav-lien-Teamback"><a href="">Bière</a></li>
+                <li class="nav-lien" id="nav-lien-Teamfront"><a href="">malt</a></li>
+                <li class="nav-lien" id="nav-lien-Collaboration"><a href="">levure</a></li>
+                <li class="nav-lien" id="nav-lien"><a href="">houblons</a></li>
+            </ul>
+        </nav>
+        <h1>Brewing Food to Beer</h1>
+        <p class="subtitle">Un blog collaboratif d'amateurs de bonne bouffe et de produits en rapport avec la bière et ces ingredients'</p>
+    </header>
+
+    <main>
+        <section class="nav-article-container">
+            <section class="article-container">
+                <article class="article-item">
+                    <h3 class="article-title"><% console.log(randomRecipe.title) %><%= randomRecipe.title %></h3>
+
+                    <p><%= randomRecipe.description %></p>
+                    <a href="" class="article-lien">Meta info</a>
+                </article>
+            </section>
+            <nav class="article-container-nav">
+                <button class="article-container-nav">&lt;Previous</button>
+                <button class="article-container-nav">&gt;Next</button>
+            </nav>
+        </section>
+        <section class="nav-search-info-container">
+            <form action="" class="search-container">
+                <input type="text" class="search-field">
+                <input type="submit" class="search-button">
+            </form>
+            <section class="info-part">
+                <h3 class="info-title">Catégories</h3>
+                <ul class="info-part-lien">
+                    <li><a href="">Bière</a></li>
+                    <li><a href="">malt</a></li>
+                    <li><a href="">levure</a></li>
+                    <li><a href="">houblons</a></li>
+                 
+                    
+                </ul>
+            </section>
+            <section class="info-part">
+                <h3 class="info-title">Auteurs</h3>
+                <ul class="info-part-lien">
+                    <li><a href="">Charlie</a></li>
+                    <li><a href="">Samantha</a></li>
+                   
+                </ul>
+            </section>
+        </section>
+
+    </main>
+
+    <footer>
+
+    </footer>
+
+</body>
+
+</html>
