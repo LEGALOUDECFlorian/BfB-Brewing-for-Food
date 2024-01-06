@@ -1,0 +1,36 @@
+### USERS ###
+
+### Récuperation de tout les utilisateurs ###
+GET  http://localhost:4000/bfb/users
+### Récuperation d'un utilisateur par son id ###
+GET  http://localhost:4000/bfb/users/1
+### Création d'un utilisateur ###
+POST  http://localhost:4000/bfb/users
+Content-Type: application/json
+
+{
+  "firstname": "Kristy",
+  "lastname": "Droupls",
+  "email": "Kristy.Pasblnc@example.com",
+  "password": "password",
+  "username": "Drls3",
+  "compagnie": "",
+  "web_site_compagnie": "",
+  "role_id": 1
+}
+### Modification d'un utilisateur ###
+PATCH  http://localhost:4000/bfb/users/3
+Content-Type: application/json
+
+{
+"firstname": "Krusty",
+  "lastname": "LeCLown",
+  "email": "Krusty.LeClown@example.com",
+  "password": "password",
+  "username": "Krusty_show",
+  "compagnie": "",
+  "web_site_compagnie": "",
+  "role_id": 2
+}
+### Suppression d'un utilisateurs ###
+DELETE  http://localhost:4000/bfb/users/10

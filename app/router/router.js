@@ -9,15 +9,21 @@ const router = Router();
 
 router.route("/bfb/users")
   .get(
-    controllerwrapper(userController.getAllUsers),
+    controllerwrapper(userController.findAllUsers),
   )
   .post(
     controllerwrapper(userController.createOne),
   );
 router.route("/bfb/users/:id")
+  .get(
+    controllerwrapper(userController.findOne),
+  )
   .patch(
-    controllerwrapper(userController.updateUser),
-  )  
+    controllerwrapper(userController.updateOne),
+  )
+  .delete(
+    controllerwrapper(userController.deleteOne),
+  );
 // page d'accueil - il faut pouvoir avoir accés a une recette au hasard pour le
 // centre de la page ainsi qu'au 5 recettes les mieux notés / et les 5 recettes
 // les plus recentes

@@ -1,13 +1,13 @@
 // require('dotenv').config();
 import "./app/helper/env.load.js";
 
-const express = require("express");
+import express from "express";
+import session from "express-session";
+import router from "./app/router/router.js";
 
 const app = express();
-const session = require("express-session");
 // const path = require('path');
 const port = process.env.PORT || 3000;
-const router = require("./app/router/router.js");
 
 // Body parser
 app.use(express.json());
@@ -32,5 +32,5 @@ app.set("views", "./app/views");
 app.use(router);
 
 app.listen(port, () => {
-  console.log(`Le bonheur ? c'est par ici => http://localhost:${port}/bfb`);
+  console.log(`Le bonheur ? c'est par ici => http://localhost:${port}`);
 });

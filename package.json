@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Un blog colaboratif pour amateur de cuisine et de fabrication de biere, qui aiment manger et ne pas jeter les restes de leurs brassins",
   "main": "index.js",
+  "type": "module",
   "author": "Florian LE GALOUDEC",
   "license": "ISC",
   "directories": {

@@ -6,6 +6,7 @@ export default {
     const result = await client.query(
       "SELECT * FROM users",
     );
+    console.log(`mapper=>${result.rows}`);
     return result.rows;
   },
 
@@ -23,7 +24,7 @@ export default {
       web_site_compagnie: webSiteCompagnie, role_id: roleId,
     } = userDetails;
     const result = await client.query(
-      "INSERT INTO (firstname, lastname, email, password, username, compagnie, web_site_compagnie, role_id) VALUES (($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *",
+      "INSERT INTO users (firstname, lastname, email, password, username, compagnie, web_site_compagnie, role_id) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *",
       [firstname, lastname, email, password, username, compagnie, webSiteCompagnie,
         roleId,
       ],
@@ -47,7 +48,7 @@ export default {
 
   async deleteUser(userId) {
     const result = await client.query(
-      "DELETE FROM users WHERE id = $1 RETURNING *",
+      "DELETE FROM users WHERE id = $1",
       [userId],
     );
     return result.rows[0];
