@@ -19,7 +19,6 @@ const mainController = {
 
       // });
 
-      console.log('topRecipes');
       response.render('homepage', { randomRecipe, lastCreatedRecipes });
     } catch (err) {
       console.log(err);
@@ -31,4 +30,3 @@ const mainController = {
 };
 
 module.exports = mainController;
-

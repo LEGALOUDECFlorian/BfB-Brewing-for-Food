@@ -7,8 +7,11 @@
     },
     "extends": "airbnb-base",
     "parserOptions": {
-        "ecmaVersion": "latest"
+        "ecmaVersion": "latest",
+        "sourceType": "module"
     },
     "rules": {
+        "quotes": ["error", "double"],
+        "import/extensions": ["error", "always"]
     }
 }
