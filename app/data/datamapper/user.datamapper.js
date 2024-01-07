@@ -6,7 +6,6 @@ export default {
     const result = await client.query(
       "SELECT * FROM users",
     );
-    console.log(`mapper=>${result.rows}`);
     return result.rows;
   },
 

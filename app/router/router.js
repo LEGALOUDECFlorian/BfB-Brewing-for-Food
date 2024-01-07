@@ -1,9 +1,9 @@
 import { Router } from "express";
 import controllerWrapper from "../helper/controller.wrapper.js";
 import userController from "../controllers/userController.js";
-// const recipeController = require('../controllers/recipeController');
-// const categoryController = require('../controllers/categoryController');
-// const opinionController = require('../controllers/opinionController');
+import validator from "../validate/index.validator.js";
+import usersSchema from "../validate/schemas/users.schema.js";
+import checkIdSchema from "../validate/schemas/check_id.schema.js";
 
 const router = Router();
 
@@ -12,16 +12,26 @@ router.route("/bfb/users")
     controllerWrapper(userController.findAllUsers),
   )
   .post(
+    validator("body", usersSchema),
     controllerWrapper(userController.createOne),
   );
 router.route("/bfb/users/:id")
   .get(
+    validator("params", checkIdSchema),
     controllerWrapper(userController.findOne),
   )
   .patch(
+    [
+      validator("params", checkIdSchema),
+      validator("body", usersSchema),
+    ],
     controllerWrapper(userController.updateOne),
   )
   .delete(
+    [
+      validator("params", checkIdSchema),
+      validator("body", usersSchema),
+    ],
     controllerWrapper(userController.deleteOne),
   );
 // page d'accueil - il faut pouvoir avoir accés a une recette au hasard pour le
