@@ -19,7 +19,7 @@ Content-Type: application/json
   "role_id": 1
 }
 ### Modification d'un utilisateur ###
-PATCH  http://localhost:4000/bfb/users/3
+PATCH  http://localhost:4000/bfb/users/5
 Content-Type: application/json
 
 {

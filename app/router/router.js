@@ -1,5 +1,5 @@
 import { Router } from "express";
-import controllerwrapper from "../helper/controller.wrapper.js";
+import controllerWrapper from "../helper/controller.wrapper.js";
 import userController from "../controllers/userController.js";
 // const recipeController = require('../controllers/recipeController');
 // const categoryController = require('../controllers/categoryController');
@@ -9,20 +9,20 @@ const router = Router();
 
 router.route("/bfb/users")
   .get(
-    controllerwrapper(userController.findAllUsers),
+    controllerWrapper(userController.findAllUsers),
   )
   .post(
-    controllerwrapper(userController.createOne),
+    controllerWrapper(userController.createOne),
   );
 router.route("/bfb/users/:id")
   .get(
-    controllerwrapper(userController.findOne),
+    controllerWrapper(userController.findOne),
   )
   .patch(
-    controllerwrapper(userController.updateOne),
+    controllerWrapper(userController.updateOne),
   )
   .delete(
-    controllerwrapper(userController.deleteOne),
+    controllerWrapper(userController.deleteOne),
   );
 // page d'accueil - il faut pouvoir avoir accés a une recette au hasard pour le
 // centre de la page ainsi qu'au 5 recettes les mieux notés / et les 5 recettes
