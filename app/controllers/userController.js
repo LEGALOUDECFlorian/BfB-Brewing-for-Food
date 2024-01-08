@@ -16,6 +16,9 @@ export default {
 
   async findAllUsers(request, response) {
     const allUsers = await userMapper.getAllUsers();
+    if (!allUsers) {
+      return response.status(500).json({ error: "User is not exist" });
+    }
     return response.json(allUsers);
   },
 
@@ -29,6 +32,9 @@ export default {
     const userId = parseInt(request.params.id, 10);
     const userDetails = request.body;
     const updateOneUser = await userMapper.updateUser(userId, userDetails);
+    if (!updateOneUser) {
+      return response.status(500).json({ error: "Internal server error" });
+    }
 
     return response.json(updateOneUser);
   },
@@ -36,6 +42,9 @@ export default {
   async deleteOne(request, response) {
     const userId = parseInt(request.params.id, 10);
     await userMapper.deleteUser(userId);
+    if (!userMapper) {
+      return response.status(500).json({ error: "User is not exist" });
+    }
     return response.status(204).end();
   },
 };

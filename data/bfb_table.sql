@@ -28,10 +28,10 @@ CREATE TABLE "users" (
     "lastname" TEXT NULL,
     "email" TEXT NOT NULL,
     "password" TEXT NOT NULL,
-    "username" TEXT NOT NULL UNIQUE DEFAULT '',
+    "username" TEXT NOT NULL UNIQUE ,
     "compagnie" TEXT NOT NULL DEFAULT '',
     "web_site_compagnie"  TEXT NOT NULL DEFAULT '',
-    "role_id" INTEGER REFERENCES "role"("id"),
+    "role_id" INTEGER REFERENCES "role"("id") DEFAULT(1),
     "created_at" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     "updated_at" TIMESTAMPTZ
    

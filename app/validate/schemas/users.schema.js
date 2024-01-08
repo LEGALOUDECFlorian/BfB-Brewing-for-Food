@@ -20,19 +20,14 @@ const usersSchema = Joi.object({
     .required(),
   username: Joi.string()
     .min(2)
-    .max(25)
-    .default(""),
+    .max(25),
   compagnie: Joi.string()
-    .min(2)
     .max(20)
     .default(""),
   web_site_compagnie: Joi.string()
-    .email()
     .default(""),
   role_id: Joi.number()
-    .integer()
-    .min(1)
-    .required(),
+    .default(1),
 
 });
 

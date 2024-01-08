@@ -18,29 +18,25 @@ export default {
   },
 
   async createUser(userDetails) {
-    const {
-      firstname, lastname, email, password, username, compagnie,
-      web_site_compagnie: webSiteCompagnie, role_id: roleId,
-    } = userDetails;
+    const fields = Object.keys(userDetails);
+    const values = Object.values(userDetails);
+    const placeholders = values.map((_, index) => `$${index + 1}`);
     const result = await client.query(
-      "INSERT INTO users (firstname, lastname, email, password, username, compagnie, web_site_compagnie, role_id) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *",
-      [firstname, lastname, email, password, username, compagnie, webSiteCompagnie,
-        roleId,
-      ],
+      `INSERT INTO users (${fields}) VALUES (${placeholders}) RETURNING *`,
+      values,
     );
     return result.rows[0];
   },
 
   async updateUser(userId, userDetails) {
-    const {
-      firstname, lastname, email, password, username, compagnie,
-      web_site_compagnie: webSiteCompagnie, role_id: roleId,
-    } = userDetails;
+    const fields = Object.keys(userDetails);
+    const values = Object.values(userDetails);
+    const placeholders = values.map((_, index) => `$${index + 1}`);
+    const userIdPlaceholder = (values.length) + 1;
+    values.push(userId);
     const result = await client.query(
-      "UPDATE users SET firstname=$1, lastname=$2, email=$3, password=$4, username=$5, compagnie=$6, web_site_compagnie=$7, role_id=$8 WHERE id=$9 RETURNING *",
-      [firstname, lastname, email, password, username, compagnie, webSiteCompagnie, roleId,
-        userId,
-      ],
+      `UPDATE users SET (${fields}) = (${placeholders})WHERE id= $${userIdPlaceholder} RETURNING *`,
+      values,
     );
     return result.rows[0];
   },
