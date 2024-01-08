@@ -7,6 +7,4 @@ const checkIdSchema = Joi.object({
     .required(),
 });
 
-export default {
-  checkIdSchema,
-};
+export default checkIdSchema;

@@ -3,19 +3,17 @@
 ### Récuperation de tout les utilisateurs ###
 GET  http://localhost:4000/bfb/users
 ### Récuperation d'un utilisateur par son id ###
-GET  http://localhost:4000/bfb/users/1
+GET  http://localhost:4000/bfb/users/55
 ### Création d'un utilisateur ###
 POST  http://localhost:4000/bfb/users
 Content-Type: application/json
 
 {
-  "firstname": "Kristy",
-  "lastname": "Droupls",
-  "email": "Kristy.Pasblnc@example.com",
+  "firstname": "jean-charles",
+  "lastname": "toupet",
+  "email": "jean-charles.toupet@example.com",
   "password": "password",
-  "username": "D41545646453",
-  "compagnie": "",
-  "web_site_compagnie": "",
+  "username": "charly_toupet",
   "role_id": 1
 }
 ### Modification d'un utilisateur ###

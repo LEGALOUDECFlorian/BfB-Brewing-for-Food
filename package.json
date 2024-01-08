@@ -11,8 +11,8 @@
   },
   "scripts": {
     "dev": "npx nodemon index.js",
-    "db:create": "psql -U superbrewer2 -d brewingfood2 -f data/bfb_table.sql",
-    "db:seed": "psql -U superbrewer2 -d brewingfood2 -f data/bfb_seeding.sql",
+    "db:create": "psql -d brewingfood -f data/bfb_table.sql",
+    "db:seed": "psql -d brewingfood -f data/bfb_seeding.sql",
     "db:reset": "npm run db:create && npm run db:seed"
   },
   "dependencies": {

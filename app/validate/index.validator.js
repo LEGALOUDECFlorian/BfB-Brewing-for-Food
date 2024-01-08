@@ -8,7 +8,7 @@ export default
     await schema.validateAsync(request[source]);
     next();
   } catch (error) {
-    console.log("catch => "+error);
-    next(new ApiError(error.details[0].message, { httpstatus: 400 }));
+    console.log(error);
+    next(new ApiError(error.message, { httpstatus: 400 }));
   }
 };
