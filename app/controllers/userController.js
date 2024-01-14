@@ -1,50 +1,6 @@
-import userMapper from "../data/datamapper/user.datamapper.js";
-import ApiError from "../errors/apiError.js";
+import UserDataMapper from "../data/datamapper/user.datamapper.js";
+import CoreController from "./core.controller.js";
 
-export default {
-
-  async notFound(_, __, next) {
-    const error = new ApiError("Resource not found", { httpStatus: 404 });
-    next(error);
-  },
-
-  async findOne(request, response) {
-    const userId = parseInt(request.params.id, 10);
-    const oneUserById = await userMapper.getOneUserById(userId);
-    return response.json(oneUserById);
-  },
-
-  async findAllUsers(request, response) {
-    const allUsers = await userMapper.getAllUsers();
-    if (!allUsers) {
-      return response.status(500).json({ error: "User is not exist" });
-    }
-    return response.json(allUsers);
-  },
-
-  async createOne(request, response) {
-    const userDetails = request.body;
-    const createNewUser = await userMapper.createUser(userDetails);
-    return response.status(201).json(createNewUser);
-  },
-
-  async updateOne(request, response) {
-    const userId = parseInt(request.params.id, 10);
-    const userDetails = request.body;
-    const updateOneUser = await userMapper.updateUser(userId, userDetails);
-    if (!updateOneUser) {
-      return response.status(500).json({ error: "Internal server error" });
-    }
-
-    return response.json(updateOneUser);
-  },
-
-  async deleteOne(request, response) {
-    const userId = parseInt(request.params.id, 10);
-    await userMapper.deleteUser(userId);
-    if (!userMapper) {
-      return response.status(500).json({ error: "User is not exist" });
-    }
-    return response.status(204).end();
-  },
-};
+export default class UserController extends CoreController {
+  static dataMapper = UserDataMapper;
+}

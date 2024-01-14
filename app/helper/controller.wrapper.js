@@ -1,10 +1,7 @@
-import ApiError from "../errors/apiError.js";
-
-export default (controller) => async (request, response, next) => {
+export default (controller) => async (req, res, next) => {
   try {
-    await controller(request, response, next);
-  } catch (error) {
-    console.error(error);
-    next(new ApiError(error.details.message, { httpStatus: 500 }));
+    await controller(req, res, next);
+  } catch (err) {
+    next(err);
   }
 };

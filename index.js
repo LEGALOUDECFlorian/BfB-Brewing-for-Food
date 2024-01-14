@@ -26,8 +26,8 @@ app.use(
 // app.use(loadUserToLocals);
 
 // Setup view engine
-app.set("view engine", "ejs");
-app.set("views", "./app/views");
+// app.set("view engine", "ejs");
+// app.set("views", "./app/views");
 
 app.use(router);
 

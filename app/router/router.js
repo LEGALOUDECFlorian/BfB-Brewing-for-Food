@@ -1,39 +1,40 @@
 import { Router } from "express";
+import ApiError from "../errors/apiError.js";
 import controllerWrapper from "../helper/controller.wrapper.js";
-import userController from "../controllers/userController.js";
-import validator from "../validate/index.validator.js";
+import UserController from "../controllers/userController.js";
+// import validator from "../validate/index.validator.js";
 import usersSchema from "../validate/schemas/users.schema.js";
-import checkIdSchema from "../validate/schemas/check_id.schema.js";
+// import checkIdSchema from "../validate/schemas/check_id.schema.js";
+import validationMiddleware from "../middlewares/validation.middleware.js";
 
 const router = Router();
 
-router.route("/bfb/users")
+router.route("/bfb/users/:id(\\d+)")
   .get(
-    controllerWrapper(userController.findAllUsers),
-  )
-  .post(
-    validator("body", usersSchema),
-    controllerWrapper(userController.createOne),
-  );
-router.route("/bfb/users/:id")
-  .get(
-    validator("params", checkIdSchema),
-    controllerWrapper(userController.findOne),
+    controllerWrapper(UserController.getByPk.bind(UserController)),
   )
   .patch(
-    [
-      validator("params", checkIdSchema),
-      validator("body", usersSchema),
-    ],
-    controllerWrapper(userController.updateOne),
+    validationMiddleware("body", usersSchema),
+    controllerWrapper(UserController.update.bind(UserController)),
   )
   .delete(
-    [
-      validator("params", checkIdSchema),
-      validator("body", usersSchema),
-    ],
-    controllerWrapper(userController.deleteOne),
+    controllerWrapper(UserController.delete.bind(UserController)),
   );
+
+router.route("/bfb/users")
+  .get(
+    controllerWrapper(UserController.getAll.bind(UserController)),
+  )
+  .post(
+    // UserController.create.bind(UserController),
+    // validator("body", usersSchema),
+    validationMiddleware("body", usersSchema),
+    controllerWrapper(UserController.create.bind(UserController)),
+  );
+
+router.use((_, __, next) => {
+  next(new ApiError("Resource not found", { httpStatus: 404 }));
+});
 // page d'accueil - il faut pouvoir avoir accés a une recette au hasard pour le
 // centre de la page ainsi qu'au 5 recettes les mieux notés / et les 5 recettes
 // les plus recentes

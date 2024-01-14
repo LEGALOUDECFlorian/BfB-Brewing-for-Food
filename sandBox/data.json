@@ -1,0 +1,31 @@
+[
+    {
+        "firstname": "bob",
+        "lastname": "l'éponge"
+    },
+    {
+        "firstname": "Patrick",
+        "lastname": "l'étoile de mer"
+    },
+    {
+        "firstname": "Carlo",
+        "lastname": "Tentacule"
+    },
+    {
+        "firstname": "Sandy",
+        "lastname": "Écureuil"
+    },
+    {
+        "firstname": "Eugène",
+        "lastname": "Krabs"
+    },
+    {
+        "firstname": "Gary",
+        "lastname": "Wilson Junior"
+    },
+    {
+        "firstname": "Sheldon",
+        "lastname": "Jr Plankton"
+    }
+
+]

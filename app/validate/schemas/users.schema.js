@@ -20,7 +20,8 @@ const usersSchema = Joi.object({
     .required(),
   username: Joi.string()
     .min(2)
-    .max(25),
+    .max(25)
+    .required(),
   compagnie: Joi.string()
     .max(20)
     .default(""),

@@ -9,23 +9,22 @@ POST  http://localhost:4000/bfb/users
 Content-Type: application/json
 
 {
-  "firstname": "jean-charles",
+  "firstname": "jeas",
   "lastname": "tot",
   "email": "jeharles.toupet@example.com",
-  "password": "password",
-  "username": "chaffret",
-  "role_id": "2"
+  "password": "pass552ord",
+  "username": "57-è-(èkhjk22t"
 }
 ### Modification d'un utilisateur ###
-# PATCH  http://localhost:4000/bfb/users/25558478488
+PATCH  http://localhost:4000/bfb/users/2
 Content-Type: application/json
 
 {
 "firstname": "Krusty",
   "lastname": "LeCLown",
-  "email": "Krusty.LeClown@example.com",
-  "password": "pasword",
-  "username": "Krusty_show"
+  "email": "Krustfhg@fhgfhample.com",
+  "password": "phgjghjuyy",
+  "username": "Krusshow_show"
 }
 ### Suppression d'un utilisateurs ###
-DELETE  http://localhost:4000/bfb/users/154
+DELETE  http://localhost:4000/bfb/users/1
