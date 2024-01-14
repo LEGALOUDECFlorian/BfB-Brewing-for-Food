@@ -1,12 +1,12 @@
 import express from "express";
-import controllerWrapper from "../../helper/controller.wrapper";
-import UserController from "../../controllers/userController";
-import usersSchema from "../../validate/schemas/users.schema";
-import validationMiddleware from "../../middlewares/validation.middleware";
+import controllerWrapper from "../../helper/controller.wrapper.js";
+import UserController from "../../controllers/userController.js";
+import usersSchema from "../../validate/schemas/users.schema.js";
+import validationMiddleware from "../../middlewares/validation.middleware.js";
 
 const usersRouter = express.Router();
 
-usersRouter.route("/bfb/users/:id(\\d+)")
+usersRouter.route("/:id(\\d+)")
   .get(
     controllerWrapper(UserController.getByPk.bind(UserController)),
   )
@@ -18,13 +18,13 @@ usersRouter.route("/bfb/users/:id(\\d+)")
     controllerWrapper(UserController.delete.bind(UserController)),
   );
 
-usersRouter.route("/bfb/users")
+usersRouter.route("/")
   .get(
     controllerWrapper(UserController.getAll.bind(UserController)),
   )
   .post(
-    // UserController.create.bind(UserController),
-    // validator("body", usersSchema),
     validationMiddleware("body", usersSchema),
     controllerWrapper(UserController.create.bind(UserController)),
   );
+
+export default usersRouter;

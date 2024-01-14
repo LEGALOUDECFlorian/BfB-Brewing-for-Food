@@ -13,10 +13,10 @@ Content-Type: application/json
   "lastname": "tot",
   "email": "jeharles.toupet@example.com",
   "password": "pass552ord",
-  "username": "57-è-(èkhjk22t"
+  "username": "57tfftfytfythjk22t"
 }
 ### Modification d'un utilisateur ###
-PATCH  http://localhost:4000/bfb/users/2
+PATCH  http://localhost:4000/bfb/users/3
 Content-Type: application/json
 
 {
@@ -27,4 +27,4 @@ Content-Type: application/json
   "username": "Krusshow_show"
 }
 ### Suppression d'un utilisateurs ###
-DELETE  http://localhost:4000/bfb/users/1
+DELETE  http://localhost:4000/bfb/users/4
