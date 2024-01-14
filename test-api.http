@@ -23,8 +23,46 @@ Content-Type: application/json
 "firstname": "Krusty",
   "lastname": "LeCLown",
   "email": "Krustfhg@fhgfhample.com",
-  "password": "phgjghjuyy",
+  "password": "phg",
   "username": "Krusshow_show"
 }
 ### Suppression d'un utilisateurs ###
-DELETE  http://localhost:4000/bfb/users/4
+DELETE  http://localhost:4000/bfb/users/5
+
+### RECIPE ###
+
+### Récupération de toutes les recettes ###
+GET  http://localhost:4000/bfb/recipe
+### Récupération d'une recette par son id ###
+GET  http://localhost:4000/bfb/recipe/4
+### Création d'une recette ###
+POST  http://localhost:4000/bfb/recipe
+Content-Type: application/json
+
+{
+  "title": "Recette 2",
+  "number_of_parts": "4",
+  "description": "Description de la recette 1",
+  "ingredients": "Ingrédients de la recette 1",
+  "instruction": "Instructions de la recette 1",
+  "preparation_time": "30",
+  "cooking_time": "15",
+  "picture": "image1.jpg",
+  "user_id": "2"
+}
+### Modification d'une recette ###
+PATCH  http://localhost:4000/bfb/recipe/6
+Content-Type: application/json
+
+{
+  "title": "Recette modifiée",
+  "number_of_parts": "6",
+  "description": "Description de la recette 1",
+  "ingredients": "Ingrédients de la recette 1",
+  "instruction": "Instructions de la recette 1",
+  "preparation_time": "120",
+  "cooking_time": "15",
+  "picture": "image1.jpg"
+}
+### Suppression d'une recette ###
+DELETE  http://localhost:4000/bfb/recipe/7

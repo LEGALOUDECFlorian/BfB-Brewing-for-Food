@@ -45,10 +45,12 @@ export default class CoreDataMapper {
   }
 
   static async delete(id) {
+    console.log(id);
     const result = await client.query(
       "DELETE FROM users WHERE id = $1",
       [id],
     );
+    console.log(result);
     return result.rows[0];
   }
 

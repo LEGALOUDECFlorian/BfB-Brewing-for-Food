@@ -1,6 +1,6 @@
 import express from "express";
 import ApiError from "../errors/apiError.js";
-import apiRouter from "./api/index.apiRouter.js";
+import apiRouter from "./api/index.api.router.js";
 
 const router = express.Router();
 

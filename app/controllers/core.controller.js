@@ -1,3 +1,4 @@
+import ApiError from "../errors/apiError.js";
 export default class Corecontroller {
   static dataMapper;
 
@@ -16,16 +17,12 @@ export default class Corecontroller {
   }
 
   static async create({ body }, response) {
-    console.log(body);
     const row = await this.dataMapper.insert(body);
     return response.status(201).json(row);
   }
 
   static async update({ params, body }, response, next) {
-    console.log(body);
-    console.log(params);
     const { id } = params;
-    console.log(id);
     const row = await this.dataMapper.update(id, body);
     if (!row) {
       return next;
@@ -37,7 +34,7 @@ export default class Corecontroller {
     const { id } = params;
     const idExist = await this.dataMapper.findByPk(id);
     if (!idExist) {
-      next();
+      next(new ApiError("Resource not found", { httpStatus: 404 }));
     }
     await this.dataMapper.delete(id);
     return response.status(204).json();
