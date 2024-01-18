@@ -1,0 +1,6 @@
+%syntax-version=1.0.0
+%project=BfB
+
+init 2024-01-18T12:50:36Z Florian LE GALOUDEC <legaloudec.florian@gmail.com> # mise en place des tables
+
+crud_function 2024-01-18T15:27:33Z Florian LE GALOUDEC <legaloudec.florian@gmail.com> # API SQL
