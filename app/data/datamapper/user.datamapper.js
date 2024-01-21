@@ -26,5 +26,7 @@
 import CoreDataMapper from "./core.datamapper.js";
 
 export default class UserDataMapper extends CoreDataMapper {
+  static writeTableName = "users";
+
   static tableName = "users";
 }

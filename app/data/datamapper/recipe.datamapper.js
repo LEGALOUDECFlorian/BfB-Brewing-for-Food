@@ -31,5 +31,7 @@
 import CoreDataMapper from "./core.datamapper.js";
 
 export default class RecipeDataMapper extends CoreDataMapper {
+  static writeTableName = "recipe";
+
   static tableName = "recipe";
 }

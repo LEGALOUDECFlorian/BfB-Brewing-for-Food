@@ -5,6 +5,10 @@ export default Joi.object({
     .min(2)
     .max(45)
     .required(),
+  slug: Joi.string()
+    .min(2)
+    .max(45)
+    .required(),
   number_of_parts: Joi.number()
     .default("")
     .required(),

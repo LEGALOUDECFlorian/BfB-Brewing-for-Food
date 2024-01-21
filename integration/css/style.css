@@ -1,0 +1,179 @@
+@config "./tailwindcss-config.js";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    box-sizing: border-box;
+   background-color: rgb(247, 246, 206);
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+  }
+
+h1{
+    text-align: center;
+}
+
+footer{
+    box-shadow: 4px -37px 19px -27px rgba(0,0,0,0.86);
+}
+
+.container{
+    background-color: #F7F8F4;
+    display: flex;
+    /* border: 1px solid red; */
+    height: 100%;
+    box-shadow: 1px -1px 47px -15px rgba(0,0,0,0.27) inset;
+
+}
+
+.nav-lien-contenair{
+    display: flex;
+    /* border: 1px solid red; */
+    justify-content: center;
+    
+}
+
+.connect{
+    justify-content: end;
+    /* padding: .5rem; */
+}
+
+.category{
+    /* gap: 1rem; */
+    /* padding: .5rem; */
+    
+}
+
+.nav-lien{
+    /* box-sizing: border-box;
+    padding: 2rem 1rem; */
+   
+    /* top:50%; */
+    background-color:#A4A869;
+    color: rgba(0,0,0,0.86);
+  
+    border-radius:10px; 
+    padding:15px;
+    min-height:30px; 
+    min-width: 120px;
+    /* border-color: blanchedalmond; */
+    /* background-color:#A4A869; */
+}
+
+.nav-title{
+    /* display: flex; */
+    /* border: 1px solid red; */
+}
+
+.nav-search-info-container{
+    padding: .5rem;
+    /* border: 2px solid rgb(26, 41, 29); */
+    box-shadow: -1px 0px 11px 2px rgba(0,0,0,0.24);
+    background-color:#EAECDB;
+
+}
+
+.info-part{
+    border: 1px solid black;
+}
+
+.search-container{
+    display: flex;
+} 
+
+.search-field{
+    width: 8rem;
+}
+
+.search-button{
+    
+    
+    width: 100%;
+
+}
+
+ul{
+    list-style-type: none;
+    text-decoration: none;
+}
+
+a {
+    text-decoration:none;
+    color: black;
+}
+
+.footer{
+    top: 0;
+}
+
+.principal-container{
+    /* border: 1px solid yellow; */
+    width: 70%;
+    height: 100vh;
+    margin: auto;
+}
+
+.nav-article-container{
+    /* height: 100%; */
+}
+
+.article-container-nav{
+   text-align: center;
+   align-items: center;
+   
+}
+
+.article-item{
+    background-color: #EAECDB;
+    box-shadow: 1px 1px 4px  black;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.article-item-footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.part-lien{
+    font-size: large;
+     padding: .5rem;
+     
+     /* background-color: brown; */
+     text-align: center;
+
+}
+
+.subtitle{
+    text-align: center;
+}
+
+.info-title{
+    text-align: center;
+}
+
+button{
+    background-color: #C0C46E;
+    border:none;
+    
+}
+
+button:hover{
+    /* background-color: #4a1140; */
+    border:none;
+    box-shadow: -6px 4px 11px 3px rgba(0,0,0,0.23);
+    border: 1px solid #a7ac67;
+}
+
+.article-container-nav{
+    
+}
+
+.sub-container{
+    /* box-shadow:  2px -1px 6px #11110E; */
+}

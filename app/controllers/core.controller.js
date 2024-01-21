@@ -1,4 +1,5 @@
 import ApiError from "../errors/apiError.js";
+
 export default class Corecontroller {
   static dataMapper;
 
@@ -10,9 +11,11 @@ export default class Corecontroller {
   static async getByPk({ params }, response, next) {
     const { id } = params;
     const row = await this.dataMapper.findByPk(id);
+    
     if (!row) {
       return next();
     }
+    console.log("row"+row);
     return response.json(row);
   }
 
@@ -25,8 +28,10 @@ export default class Corecontroller {
     const { id } = params;
     const row = await this.dataMapper.update(id, body);
     if (!row) {
-      return next;
+      console.log("don't row");
+      return next();
     }
+    console.log("row"+row);
     return response.json(row);
   }
 

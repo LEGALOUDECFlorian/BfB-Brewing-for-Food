@@ -21,9 +21,10 @@ INSERT INTO"users"
 -- Ajout de recettes
 INSERT INTO
     "recipe"
-     ("title","number_of_parts","description","ingredients","instruction","preparation_time","cooking_time","picture","user_id","created_at" )VALUES 
+     ("title","slug","number_of_parts","description","ingredients","instruction","preparation_time","cooking_time","picture","user_id","created_at" )VALUES 
         (
         'Limonade citronnée à la levure de bière',
+        'Limonade citronnée a la levure de biere',
         8,
         '',
         '1.5 l d''eau,1 kg de sucre cristallisé (à confiture),1 citron bio (ou non traité),15 cl de vinaigre blanc,5 g de levure de bière',
@@ -41,6 +42,7 @@ INSERT INTO
 
  (
     'poulet à la bière et au miel',
+    'poulet a la biere et au miel',
     3,
     'Voici le poulet à la bière ! Les amateurs de houblon et de carbonade apprécieront la légère amertume de la sauce, adoucie par le miel. 
     J’utilise ici des hauts de cuisses de poulet avec des pommes de terre. Il peut également être servi avec des petites pâtes.',
@@ -74,7 +76,8 @@ INSERT INTO
 ),
 
  (
-    'Biscuits aux drêches & amandes',
+    'Biscuits aux drêches et amandes',
+    'Biscuits aux dreches et amandes',
     10,
     'Les drêches sont un co-produit créé lors de la fabrication de la bière : 
      c''est la partie restante du malt d’orge (ou de blé) après sa fermentation (soit l’enveloppe riche en fibres et le grain,
@@ -95,6 +98,7 @@ INSERT INTO
 
  (
     'La galette au houblon, orge caramélisée, bière glacée',
+    'La galette au houblon, orge caramelisee, biere glacee',
     6,
     'Orge, malt, torréfaction, fleurs de houblon… Pour ce dessert signature, la chef pâtissière du Plaza Athénée convie à une expérience sensorielle unique autour de la bière et de l''amertume.',
     'Pour la galette au houblon,

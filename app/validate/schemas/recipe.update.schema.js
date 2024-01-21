@@ -4,8 +4,11 @@ export default Joi.object({
   title: Joi.string()
     .min(2)
     .max(45),
+  slug: Joi.string()
+    .min(2)
+    .max(45),
   number_of_parts: Joi.number()
-    .default(""),
+    .default(0),
   description: Joi.string()
     .min(2)
     .max(1500),

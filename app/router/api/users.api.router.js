@@ -39,10 +39,9 @@ usersRouter.route("/:id(\\d+)")
  * @summary Delete a Users
  * @tags Users
  * @param {number} id.path.required - Users id
- * @param {UserInput} request.body.required - Users info
  * @return {Users} 200 - success response - application/json
  * @return {ApiJsonError} 400 - Bad request response - application/json
- * @return {ApiJsonError} 404 - Not found response - application/json
+ * @return {ApiJsonError} 404 - Not found response - application/jsonp
  * @return {ApiJsonError} 500 - Internal Server Error - application/json
  */
   .delete(

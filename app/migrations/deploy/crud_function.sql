@@ -3,7 +3,7 @@
 BEGIN;
 
 -- USERS
-CREATE FUNCTION "insert_users"(json) RETURNS "users" AS $$
+CREATE FUNCTION "create_users"(json) RETURNS "users" AS $$
 
     INSERT INTO "users"
     (
@@ -48,7 +48,7 @@ $$ LANGUAGE sql STRICT;
 
 -- RECIPE
 
-CREATE FUNCTION "insert_recipe"(json) RETURNS "recipe" AS $$
+CREATE FUNCTION "create_recipe"(json) RETURNS "recipe" AS $$
 
     INSERT INTO "recipe"
     (
@@ -97,7 +97,7 @@ COMMIT;
 
 -- OPINION
 
-CREATE FUNCTION "insert_opinion"(json) RETURNS "opinion" AS $$
+CREATE FUNCTION "create_opinion"(json) RETURNS "opinion" AS $$
 
     INSERT INTO "opinion"
     (
