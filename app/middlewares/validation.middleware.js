@@ -6,7 +6,7 @@ export default (sourceProperty, schema) => async (request, _, next) => {
     await schema.validateAsync(request[sourceProperty]);
     next();
   } catch (error) {
-    console.log("schemaNOTVALID");
+    console.log("schemaNOTVALID", error);
     next(new ApiError(error.details[0].message, { httpStatus: 400 }));
   }
 };

@@ -88,9 +88,9 @@ INSERT INTO"category" ("name", "created_at")VALUES
 
 -- Ajout d'utilisateurs
 INSERT INTO"users" 
-    ("firstname","lastname","email","password","username","compagnie","web_site_compagnie","role_id","created_at")VALUES
-    ('Charlie','Brewer','charlie.brewer@example.com','password','Charlie_Brewer','','',2,NOW()),
-    ('Samantha','Hophead','samantha.hophead@example.com','password','Samantha_Hophead','','',1,NOW());
+    ("firstname","lastname","email","password","username","role_id","created_at")VALUES
+    ('Charlie','Brewer','charlie.brewer@example.com','password','Charlie_Brewer',1,NOW()),
+    ('Samantha','Hophead','samantha.hophead@example.com','password','Samantha_Hophead',2,NOW());
 
 -- Ajout de recettes
 INSERT INTO

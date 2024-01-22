@@ -18,45 +18,23 @@ export default class CoreDataMapper {
     return result.rows[0];
   }
 
-  // static async insert(data) {
-  //   const fields = Object.keys(data);
-  //   const values = Object.values(data);
-  //   const placeholders = fields.map((_, index) => `$${index + 1}`);
-  //   const result = await client.query(
-  //     `INSERT INTO "${this.tableName}"
-  //     (${fields}) VALUES (${placeholders})
-  //     RETURNING *`,
-  //     values,
-  //   );
-  //   return result.rows[0];
-  // }
-
   static async insert(data) {
+    console.log("datamapper", data);
     const result = await client.query(
       `SELECT * FROM create_${this.writeTableName}($1)`,
       [data],
     );
+    console.log("resultBase", result.rows[0]);
     return result.rows[0];
   }
 
-  // static async update(id, data) {
-  //   const fields = Object.keys(data);
-  //   const values = Object.values(data);
-  //   const placeholders = fields.map((field, index) => `"${field}" = $${index + 1}`).join(", ");
-  //   const result = await client.query(
-  //     `UPDATE "${this.tableName}"
-  //          SET ${placeholders}
-  //          WHERE id = $${fields.length + 1} RETURNING *`,
-  //     [...values, id],
-  //   );
-  //   return result.rows[0];
-  // }
-
   static async update(data) {
+    console.log("datamapper", data);
     const result = await client.query(
-      `SELECT * FROM create_${this.writeTableName}($1)`,
+      `SELECT * FROM update_${this.writeTableName}($1)`,
       [data],
     );
+    console.log("resultBase", result.rows[0]);
     return result.rows[0];
   }
 

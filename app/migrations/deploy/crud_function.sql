@@ -21,9 +21,9 @@ CREATE FUNCTION "create_users"(json) RETURNS "users" AS $$
         $1->>'email',
         $1->>'password',
         $1->>'username',
-        $1->>'compagnie',
-        $1->>'web_site_compagnie',
-        ($1->>'role_id')::int
+        COALESCE($1->>'compagnie',''),
+        COALESCE($1->>'web_site_compagnie',''),
+        COALESCE(($1->>'role_id')::int,1)
     )
     RETURNING *;
 

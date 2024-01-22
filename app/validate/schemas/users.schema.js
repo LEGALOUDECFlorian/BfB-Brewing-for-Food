@@ -24,9 +24,11 @@ const usersSchema = Joi.object({
     .required(),
   compagnie: Joi.string()
     .max(20)
-    .default(""),
+    .default("")
+    .allow(""),
   web_site_compagnie: Joi.string()
-    .default(""),
+    .default("")
+    .allow(""),
   role_id: Joi.number()
     .default(1),
 
